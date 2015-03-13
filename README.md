@@ -5,7 +5,7 @@ Create your free account and access token [here](https://apps.sematext.com/users
 
 ## Usage
 
-```
+```js
 
         var winston = require('winston');
         var Logsene = require('winston-logsene');
