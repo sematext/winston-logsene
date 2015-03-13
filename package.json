@@ -1,6 +1,6 @@
 {
   "name": "winston-logsene",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Winston transport layer for Logsene",
   "main": "lib/index.js",
   "scripts": {
