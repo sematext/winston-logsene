@@ -1,6 +1,6 @@
 {
   "name": "winston-logsene",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Winston transport layer for Logsene",
   "main": "lib/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://www.sematext.com",
   "dependencies": {
-    "logsene-js": "^1.0.2",
+    "logsene-js": "^1.0.5",
     "winston": "^0.9.0"
   },
   "devDependencies": {
