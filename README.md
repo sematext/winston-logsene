@@ -1,4 +1,4 @@
-This is an a transport module for the winston logger [flatiron/winston](https://github.com/flatiron/winston) logging into [Logsene](http://www.sematext.com/logsene) by Sematext.
+This is a transport module for the winston logger [flatiron/winston](https://github.com/flatiron/winston) for logging with [Logsene](http://www.sematext.com/logsene) by Sematext.
 
 Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene.
 Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
