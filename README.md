@@ -4,20 +4,16 @@ Logsene provides an Elasticsearch Cluster, the Logsene User-Interface, Access Se
 The log transport is using HTTPS/TLS by default.
 
 Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene.
-Create your access token [here](https://apps.sematext.com/users-web/register.do) - the free account includes 1 million log messages.
+Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
 
 ## Usage
 
 ```
 
-        var winston = require('winston')
-        var LogseneTransport = require('winston-logsene')
-        var logger = new (winston.Logger)({
-            transports: [
-              new (winston.transports.Console)(),
-              new (LogseneTransport.Logsene)({token: process.env.LOGSENE_TOKEN})
-            ]
-        })
+        var winston = require('winston');
+        var Logsene = require('winston-logsene');
+        var logger = new winston.Logger()
+        logger.add (new Logsene({token: process.env.LOGSENE_TOKEN}))
         // use dynamic list of placeholders and parameters and any Object as Metadata
         // message placeholders work the same way as in util.format()
         logger.info ('Info Message')

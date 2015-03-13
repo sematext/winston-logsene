@@ -1,7 +1,7 @@
 {
-  "name": "winston-crate",
-  "version": "0.0.7",
-  "description": "Winston transport layer for Logsene (www.sematext.com/logsene)",
+  "name": "winston-logsene",
+  "version": "1.0.0",
+  "description": "Winston transport layer for Logsene",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/sematext/winston-logsene/issues"
   },
-  "homepage": "http://sematext.github.io/winston-logsene/",
+  "homepage": "https://www.sematext.com",
   "dependencies": {
     "logsene-js": "^1.0.2",
     "winston": "^0.9.0"
