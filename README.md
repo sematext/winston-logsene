@@ -25,6 +25,6 @@ Create your free account and access token [here](https://apps.sematext.com/users
 
 ## License
 
-Apache 2, see LICENCE file
+Apache 2, see LICENSE file
 
 
