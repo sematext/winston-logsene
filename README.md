@@ -8,9 +8,8 @@ Create your free account and access token [here](https://apps.sematext.com/users
 ```js
 
         var winston = require('winston');
-        var Logsene = require('winston-logsene');
         var logger = new winston.Logger()
-        logger.add (new Logsene({token: process.env.LOGSENE_TOKEN}))
+        logger.add (Logsene, {token: process.env.LOGSENE_TOKEN})
         // use dynamic list of placeholders and parameters and any Object as Metadata
         // message placeholders work the same way as in util.format()
         logger.info ('Info Message')
