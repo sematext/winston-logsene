@@ -1,0 +1,36 @@
+{
+  "name": "winston-crate",
+  "version": "0.0.7",
+  "description": "Winston transport layer for Logsene (www.sematext.com/logsene)",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "bundle": "browserify -r ./lib/index.js:winston-logsene > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sematext/winston-logsene.git"
+  },
+  "keywords": [
+    "Logsene",
+    "sematext",
+    "elasticsearch",
+    "ELK",
+    "logger",
+    "winston"
+  ],
+  "author": "Sematext",
+  "contributors": [],
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/sematext/winston-logsene/issues"
+  },
+  "homepage": "http://sematext.github.io/winston-logsene/",
+  "dependencies": {
+    "logsene-js": "^1.0.2",
+    "winston": "^0.9.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1"
+  }
+}
