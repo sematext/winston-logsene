@@ -17,7 +17,7 @@ Create your free account and access token [here](https://apps.sematext.com/users
         logger.info ('Info Message', {tags: ['info', 'test']})
         logger.info ("Info message no. %d logged to %s",1,'Logsene', {metadata: "test-log", count:1 , tags: ['test', 'info', 'winston']})
         logger.error ("Error message no. %d logged to %s",1,'Logsene', {metadata: "test-error", count:1, tags: ['test', 'info', 'winston']})
-        logger.warning ("Warning message no. %d logged to %s",1,'Logsene', {metadata: "test-warning", count:1, tags: ['test', 'info', 'winston']})
+        logger.warn ("Warning message no. %d logged to %s",1,'Logsene', {metadata: "test-warning", count:1, tags: ['test', 'info', 'winston']})
         logger.debug ("Debug message no. %d logged to %s",1,'Logsene', {metadata: "test-debug", count:1})
 
 ```
