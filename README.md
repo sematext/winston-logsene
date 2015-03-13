@@ -1,8 +1,5 @@
 This is an a transport module for the winston logger [flatiron/winston](https://github.com/flatiron/winston) logging into [Logsene](http://www.sematext.com/logsene) by Sematext.
 
-Logsene provides an Elasticsearch Cluster, the Logsene User-Interface, Access Security, CSV Export, account and app sharing, alerts and more.
-The log transport is using HTTPS/TLS by default.
-
 Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene.
 Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
 
