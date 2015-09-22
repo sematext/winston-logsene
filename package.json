@@ -17,6 +17,9 @@
     "elasticsearch",
     "ELK",
     "logger",
+    "log management",
+    "logging saas",
+    "centralized logging",
     "winston"
   ],
   "author": "Sematext",
