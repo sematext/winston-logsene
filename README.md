@@ -1,6 +1,6 @@
-This is a transport module for the winston logger [flatiron/winston](https://github.com/flatiron/winston) for logging with [Logsene](http://www.sematext.com/logsene) by Sematext.
+This is a transport module for the winston logger [winstonjs/winston](https://github.com/winstonjs/winston) for logging with [Logsene](http://www.sematext.com/logsene) by Sematext.
 
-Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene.
+Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene (think Hosted Elasticsearch + Kibana).
 Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
 
 ## Usage
