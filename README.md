@@ -10,7 +10,17 @@ Create your free account and access token [here](https://apps.sematext.com/users
         var winston = require('winston')
         var logsene = require('winston-logsene') 
         var logger = new winston.Logger()
-        logger.add (logsene, {token: process.env.LOGSENE_TOKEN})
+        logger.add (logsene, {token: process.env.LOGSENE_TOKEN, type: 'test_logs'})
+ ```
+### Options
+
+- __token__ - Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
+- __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Logsene](http://blog.sematext.com/2015/02/09/elasticsearch-mapping-types-for-json-logging/) 
+
+
+### Examples
+
+```
         // use dynamic list of placeholders and parameters and any Object as Metadata
         // message placeholders work the same way as in util.format()
         logger.info ('Info Message')
@@ -23,7 +33,15 @@ Create your free account and access token [here](https://apps.sematext.com/users
 
 ```
 
+## Security
 
+- HTTPS is enabled by default 
+- Environment variables for Proxy servers:
+  - HTTPS_PROXY / https_proxy
+    ```
+        export HTTPS_PROXY=https://my-ssl-proxy.example
+    ```
+          
 ## License
 
 Apache 2, see LICENSE file
