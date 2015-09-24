@@ -20,7 +20,7 @@ logger.add (logsene, {token: process.env.LOGSENE_TOKEN, type: 'test_logs'})
 
 ### Examples
 
-```
+```js
 // use dynamic list of placeholders and parameters and any Object as Metadata
 // message placeholders work the same way as in util.format()
 logger.info ('Info Message')
