@@ -16,7 +16,7 @@ Create your free account and access token [here](https://apps.sematext.com/users
 
 - __token__ - Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
 - __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Logsene](http://blog.sematext.com/2015/02/09/elasticsearch-mapping-types-for-json-logging/) 
-
+- __url__ - Logsene receiver URL (e.g. for Logsene On Premises), defaults to 'https://logsene-receiver.sematext.com/_bulk'
 
 ### Examples
 
@@ -37,10 +37,16 @@ Create your free account and access token [here](https://apps.sematext.com/users
 
 - HTTPS is enabled by default 
 - Environment variables for Proxy servers:
-  - HTTPS_PROXY / https_proxy
-    ```
+  - For HTTPS endpoints (default): HTTPS_PROXY / https_proxy
+```
         export HTTPS_PROXY=https://my-ssl-proxy.example
-    ```
+        export HTTPS_PROXY=http://my-proxy.example
+```
+  - For HTTP endpoints (e.g. On-Premises): HTTP_PROXY / http_proxy
+```
+        export HTTP_PROXY=http://my-proxy.example
+        export HTTP_PROXY=https://my-proxy.example
+```
           
 ## License
 
