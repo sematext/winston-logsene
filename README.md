@@ -45,7 +45,7 @@ Create your free account and access token [here](https://apps.sematext.com/users
   - For HTTP endpoints (e.g. On-Premises): HTTP_PROXY / http_proxy
 ```
         export HTTP_PROXY=http://my-proxy.example
-        export HTTP_PROXY=https://my-proxy.example
+        export HTTP_PROXY=https://my-ssl-proxy.example
 ```
           
 ## License
