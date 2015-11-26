@@ -53,7 +53,7 @@ logger.info('hello', {id: 'ID-1'})
 // using a different type, OK no type conflict for the field 'id' in Elasticsearch/Logsene
 // because we use a different type in the Elasticsearch/Logsene index 
 logger.info('hello', {type: 'my_type_with_string_ids',{id: 'ID-1'})
-
+```
 
 ## Security
 
