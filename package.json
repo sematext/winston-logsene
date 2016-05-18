@@ -30,7 +30,7 @@
   },
   "homepage": "https://www.sematext.com",
   "dependencies": {
-    "flat": "^1.6.0",
+    "flat": "^1.6.1",
     "logsene-js": "^1.0.12",
     "winston": "^0.9.0"
   },
