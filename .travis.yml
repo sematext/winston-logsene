@@ -1,6 +1,5 @@
 language: node_js
 env:
-  global: 
     - LOGENE_TOKEN=0WINSTON-TEST-TEST-TEST-3d52f1f13198
 node_js:
   - "0.10"
