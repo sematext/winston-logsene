@@ -1,3 +1,5 @@
+![](https://travis-ci.org/sematext/winston-logsene.svg?branch=master)
+
 This is a transport module for the winston logger [winstonjs/winston](https://github.com/winstonjs/winston) for logging with [Logsene](http://www.sematext.com/logsene) by Sematext.
 
 Winston-Logsene combines the flexibility of using the Winston logging framework with Logsene (think Hosted Elasticsearch + Kibana).
