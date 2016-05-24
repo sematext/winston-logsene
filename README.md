@@ -1,4 +1,5 @@
-![](https://travis-ci.org/sematext/winston-logsene.svg?branch=master)
+![](https://travis-ci.org/sematext/winston-logsene.svg?branch=master) 
+[![bitHound Overall Score](https://www.bithound.io/github/sematext/winston-logsene/badges/score.svg)](https://www.bithound.io/github/sematext/winston-logsene)
 
 This is a transport module for the winston logger [winstonjs/winston](https://github.com/winstonjs/winston) for logging with [Logsene](http://www.sematext.com/logsene) by Sematext.
 
