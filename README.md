@@ -23,6 +23,7 @@ logger.add (logsene, {token: process.env.LOGSENE_TOKEN, type: 'test_logs'})
 - __handleExceptions__ - boolean 'true' logs 'uncaught exceptions'
 - __exitOnError__ - if set to 'false' process will not exit after logging the 'uncaught exceptions'
 - __source__ - name of the logging source, by default name of the main node.js module
+- __setSource__ - "true" adds "source" to the log event (modifies the object!), default false
 - __rewriter__ - similar to rewriters in winston, rewriter allows modifying of __log meta__ but only for the logsene 
   transport. This is a simple function which takes `level, msg, meta` as parameter and returns the new __meta__ array
 - __flushOnExit__ - Handling SIGTERM, SIGQUIT, SIGINT and 'beforeExit' to flush logs and terminate. Default value: true.

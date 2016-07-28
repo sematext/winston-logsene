@@ -30,7 +30,7 @@ describe('Logsene log source', function () {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
       var logger = new winston.Logger()
-      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN, source: 'mocha-test'})
+      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN, setSource: true, source: 'mocha-test'})
       logger.info('Test', function (err, level, message, data) {
         if (err) {
           done(err)
