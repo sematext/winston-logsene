@@ -56,12 +56,15 @@ describe('Logsene rewrite hook', function () {
       var serverIp = '10.0.0.12'
       logger.add(Logsene, {
         token: process.env.LOGSENE_TOKEN,
+        setSource: false,
+        flushOnExit: true,
         rewriter: function (level, msg, meta) {
           meta.ip = serverIp
           return meta
         }
       })
-      logger.info('Test', function (err, level, message, meta) {
+      var lo = {x: 1}
+      logger.info('Test', lo, function (err, level, message, meta) {
         if (meta.ip === serverIp) {
           done()
         } else {
