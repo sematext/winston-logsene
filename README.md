@@ -13,7 +13,11 @@ Create your free account and access token [here](https://apps.sematext.com/users
 var winston = require('winston')
 var logsene = require('winston-logsene') 
 var logger = new winston.Logger()
-logger.add (logsene, {token: process.env.LOGSENE_TOKEN, type: 'test_logs'})
+logger.add (logsene, {
+  token: process.env.LOGSENE_TOKEN, 
+  type: 'test_logs', 
+  url: 'https://logsene-receiver.sematext.com/_bulk'
+})
 ```
 ### Options
 
