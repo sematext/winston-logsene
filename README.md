@@ -19,7 +19,7 @@ logger.add (logsene, {token: process.env.LOGSENE_TOKEN, type: 'test_logs'})
 
 - __token__ - Create your free account and access token [here](https://apps.sematext.com/users-web/register.do).
 - __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Logsene](http://blog.sematext.com/2015/02/09/elasticsearch-mapping-types-for-json-logging/) 
-- __url__ - Logsene receiver URL (e.g. for Logsene On Premises), defaults to ```'https://logsene-receiver.sematext.com/_bulk'```
+- __url__ - Logsene receiver URL (e.g. for Logsene On Premises), defaults to Sematext Cloud (US) receiver `https://logsene-receiver.sematext.com/_bulk`.  To ship logs to Sematext Cloud (EU) in Europe use `https://logsene-receiver.eu.sematext.com/_bulk`
 - __handleExceptions__ - boolean 'true' logs 'uncaught exceptions'
 - __exitOnError__ - if set to 'false' process will not exit after logging the 'uncaught exceptions'
 - __source__ - name of the logging source, by default name of the main node.js module
