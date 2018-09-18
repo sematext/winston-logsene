@@ -5,7 +5,7 @@ describe('Logsene log ', function () {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
       var logger = new winston.Logger()
-      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN})
+      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN || 'token'})
       var counter = 0
       for (var i = 0; i < 100; i++) {
         logger.info('Test %d for %s', i, 'logsene', {x: i, y: {arr: [1, 2, 3, 4]}}, function (err, res) {
@@ -30,7 +30,7 @@ describe('Logsene log source', function () {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
       var logger = new winston.Logger()
-      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN, setSource: true, source: 'mocha-test'})
+      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN || 'token', setSource: true, source: 'mocha-test'})
       logger.info('Test', function (err, level, message, data) {
         if (err) {
           done(err)
@@ -55,7 +55,7 @@ describe('Logsene rewrite hook', function () {
       var logger = new winston.Logger()
       var serverIp = '10.0.0.12'
       logger.add(Logsene, {
-        token: process.env.LOGSENE_TOKEN,
+        token: process.env.LOGSENE_TOKEN || 'token',
         setSource: false,
         flushOnExit: true,
         rewriter: function (level, msg, meta) {
@@ -69,6 +69,30 @@ describe('Logsene rewrite hook', function () {
           done()
         } else {
           done(new Error('rewrite field ip is not correct:' + meta.ip))
+        }
+      })
+    } catch (ex) {
+      console.log(ex.stack)
+      done(ex)
+    }
+  })
+})
+describe('Logsene flush logs', function () {
+  it('should flush logs', function (done) {
+    try {
+      var winston = require('winston')
+      var Logsene = require('../lib/index.js')
+      var logger = new winston.Logger()      
+      logger.add(Logsene, {
+        token: process.env.LOGSENE_TOKEN || 'token',
+        setSource: false,
+        flushOnExit: false
+      })      
+      logger.transports.Logsene.flushLogs(function(err, exitTime) {
+        if (exitTime === 200) {
+          done()
+        } else {
+          done(new Error('flush logs failed'))
         }
       })
     } catch (ex) {
