@@ -57,7 +57,6 @@ describe('Logsene rewrite hook', function () {
       logger.add(Logsene, {
         token: process.env.LOGSENE_TOKEN || 'token',
         setSource: false,
-        flushOnExit: true,
         rewriter: function (level, msg, meta) {
           meta.ip = serverIp
           return meta
