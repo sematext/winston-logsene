@@ -4,20 +4,26 @@ describe('Logsene log ', function () {
     try {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
-      var logger = new winston.Logger()
-      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN})
+      var transport = new Logsene({token: process.env.LOGSENE_TOKEN})
+      var logger = winston.createLogger({
+        transports:[transport]
+      })
       var counter = 0
       for (var i = 0; i < 100; i++) {
-        logger.info('Test %d for %s', i, 'logsene', {x: i, y: {arr: [1, 2, 3, 4]}}, function (err, res) {
-          counter++
-          if (counter == 99) {
-            done()
-          }
-          if (err) {
-            done(err)
-          }
-        })
+        logger.info('Test %d for %s', i, 'logsene', {x: i, y: {arr: [1, 2, 3, 4]}})
       }
+      transport.on('logged', function (data) {
+        counter++
+        if (counter == 99) {
+          done()
+        }
+      })
+      transport.on('finish', function (err) {
+        if (err) {
+          done(err)
+        }
+      })
+      logger.end()
     } catch (ex) {
       console.log(ex.stack)
       done(ex)
@@ -29,18 +35,22 @@ describe('Logsene log source', function () {
     try {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
-      var logger = new winston.Logger()
-      logger.add(Logsene, {token: process.env.LOGSENE_TOKEN, setSource: true, source: 'mocha-test'})
-      logger.info('Test', function (err, level, message, data) {
+      var transport = new Logsene({token: process.env.LOGSENE_TOKEN, setSource: true, source: 'mocha-test'})
+      var logger = winston.createLogger({
+        transports:[transport]
+      })
+      transport.on('logged', function(data) {
+        if (data.source === 'mocha-test') {
+          done()
+        }
+      })
+      logger.info('Test')
+      logger.on('finish', function (err, level, message, data) {
         if (err) {
           done(err)
         }
-        if (data.source === 'mocha-test') {
-          done()
-        } else {
-          done(new Error('source not correct:' + data.source))
-        }
       })
+      logger.end()
     } catch (ex) {
       console.log(ex.stack)
       done(ex)
@@ -52,9 +62,7 @@ describe('Logsene rewrite hook', function () {
     try {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
-      var logger = new winston.Logger()
-      var serverIp = '10.0.0.12'
-      logger.add(Logsene, {
+      var transport = new Logsene({
         token: process.env.LOGSENE_TOKEN,
         setSource: false,
         flushOnExit: true,
@@ -63,14 +71,20 @@ describe('Logsene rewrite hook', function () {
           return meta
         }
       })
+      var logger = winston.createLogger({
+        transports:[transport]
+      })
+      var serverIp = '10.0.0.12'
       var lo = {x: 1}
-      logger.info('Test', lo, function (err, level, message, meta) {
-        if (meta.ip === serverIp) {
+      transport.on('logged', function(data) {
+        if (data.ip === serverIp) {
           done()
         } else {
-          done(new Error('rewrite field ip is not correct:' + meta.ip))
+          done(new Error('rewrite field ip is not correct:' + data.ip))
         }
       })
+      logger.info('Test', lo)
+      logger.end()
     } catch (ex) {
       console.log(ex.stack)
       done(ex)
