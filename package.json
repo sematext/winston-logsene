@@ -32,7 +32,8 @@
   "dependencies": {
     "flat": "^2.0.0",
     "logsene-js": "^1.1.49",
-    "winston": "^2.3.1"
+    "winston": "^3.1.0",
+    "winston-transport": "^4.2.0"
   },
   "devDependencies": {
     "mocha": "^2.5.3"
