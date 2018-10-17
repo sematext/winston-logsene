@@ -1,10 +1,8 @@
 language: node_js
 node_js:
-  - "4"
-  - "5"
   - "6"
   - "8"
-  - "9"
+  - "10"
 install: 
   - npm i
   - npm test
