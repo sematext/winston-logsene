@@ -51,7 +51,7 @@ logger.debug ("Debug message no. %d logged to %s",1,'Sematext Cloud', {metadata:
 var serverIp = "10.0.0.12";
 var logger = winston.createLogger({
   transports: [new Logsene({
-    token: process.env.LOGSENE_TOKEN,
+    token: process.env.LOGS_TOKEN,
     rewriter: function (level, msg, meta) {
       meta.ip = serverIp;
       return meta;
