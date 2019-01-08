@@ -15,6 +15,7 @@ var Logsene = require('winston-logsene')
 var logger = winston.createLogger({
   transports: [new Logsene({
     token: process.env.LOGS_TOKEN,
+    level: 'debug'
     type: 'test_logs',
     url: 'https://logsene-receiver.sematext.com/_bulk'
   })]
