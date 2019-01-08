@@ -37,27 +37,37 @@ var logger = winston.createLogger({
 ### Examples
 
 ```js
-// use dynamic list of placeholders and parameters and any Object as Metadata
-// message placeholders work the same way as in util.format()
-logger.info ('Info Message')
-// utilize tags (in the metadata object) as filter to be used in Sematext Cloud user interface
-logger.info ('Info Message', {tags: ['info', 'test']})
-logger.info ("Info message no. %d logged to %s",1,'Sematext Cloud', {metadata: "test-log", count:1 , tags: ['test', 'info', 'winston']})
-logger.error ("Error message no. %d logged to %s",1,'Sematext Cloud', {metadata: "test-error", count:1, tags: ['test', 'error', 'winston']})
-logger.warn ("Warning message no. %d logged to %s",1,'Sematext Cloud', {metadata: "test-warning", count:1, tags: ['test', 'warning', 'winston']})
-logger.debug ("Debug message no. %d logged to %s",1,'Sematext Cloud', {metadata: "test-debug", count:1})
+// var winston = require('winston')
+var Logsene = require('winston-logsene')
+const {createLogger, format} = require('winston')
 
-// use custom rewriter
-var serverIp = "10.0.0.12";
-var logger = winston.createLogger({
+// example for custom rewriter, e.g. add myServerIp field to all logs
+var myServerIp = '10.0.0.12'
+
+var logger = createLogger({
   transports: [new Logsene({
+    // set log level, defaut is 'info'
+    level: 'debug',
+    // optional set a format function
+    format: format.splat(),
     token: process.env.LOGS_TOKEN,
     rewriter: function (level, msg, meta) {
-      meta.ip = serverIp;
-      return meta;
+      meta.ip = myServerIp
+      return meta
     }
   })]
 })
+
+logger.info('debug', 'Info Message')
+// use dynamic list of placeholders and parameters for format.splat(), and any Object as Metadata
+logger.info('Info message no. %d logged to %s', 1, 'Sematext Cloud', {meta: 'test-log', count: 1, tags: ['test', 'info', 'winston']})
+// message placeholders work the same way as in util.format()
+// utilize tags (in the metadata object) as filter to be used in Sematext Cloud user interface
+logger.info('Info Message', {tags: ['info', 'test']})
+logger.error('Error message no. %d logged to %s', 1, 'Sematext Cloud', {meta: 'test-error', count: 1, tags: ['test', 'error', 'winston']})
+logger.warn('Warning message no. %d logged to %s', 1, 'Sematext Cloud', {meta: 'test-warning', count: 1, tags: ['test', 'warning', 'winston']})
+logger.debug('Debug message no. %d logged to %s', 1, 'Sematext Cloud', {meta: 'test-debug', count: 1})
+
 ```
 
 ### Schema / Mapping definition for Meta-Data
