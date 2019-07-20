@@ -75,7 +75,7 @@ logger.debug('Debug message no. %d logged to %s', 1, 'Sematext Cloud', {meta: 't
 
 It is possible to log any JSON Object as meta data, but please note Sematext Cloud stores data in Elasticsearch and therefore you should define an index template, matching your data structure.
 More about Elasticsearch mapping and templates for Sematext Cloud:
-[http://blog.sematext.com/2015/01/20/custom-elasticsearch-index-templates-in-logsene/](http://blog.sematext.com/2015/01/20/custom-elasticsearch-index-templates-in-logsene/)
+[https://sematext.com/blog/custom-elasticsearch-index-templates-in-logsene/](https://sematext.com/blog/custom-elasticsearch-index-templates-in-logsene/)
 
 In addition you should use different types for different meta data structures to avoid type conflicts in Elasticsearch. Include a type name in the meta-data like {type: 'logType1', ...} - this overwrites the "type" property, specified in the contstructor.
 ```
@@ -107,5 +107,3 @@ logger.info('hello', {type: 'my_type_with_string_ids',{id: 'ID-1'})
 ## License
 
 Apache 2, see LICENSE file
-
-
