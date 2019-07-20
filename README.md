@@ -24,7 +24,7 @@ var logger = winston.createLogger({
 ### Options
 
 - __token__ - Create your free account and access token [here](https://apps.sematext.com/ui/registration).
-- __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Sematext Cloud](http://blog.sematext.com/2015/02/09/elasticsearch-mapping-types-for-json-logging/)
+- __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Sematext Cloud](https://sematext.com/blog/custom-elasticsearch-index-templates-in-logsene/)
 - __url__ - Sematext Cloud receiver URL (or URL for Sematext Enterprise / On Premises), defaults to Sematext Cloud (US) receiver `https://logsene-receiver.sematext.com/_bulk`.  To ship logs to Sematext Cloud (EU) in Europe use `https://logsene-receiver.eu.sematext.com/_bulk`
 - __handleExceptions__ - boolean 'true' logs 'uncaught exceptions'
 - __exitOnError__ - if set to 'false' process will not exit after logging the 'uncaught exceptions'
