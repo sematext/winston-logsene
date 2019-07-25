@@ -13,6 +13,7 @@ Create your free account and access token [here](https://apps.sematext.com/ui/re
 var winston = require('winston')
 var Logsene = require('winston-logsene')
 var logger = winston.createLogger({
+  levels: winston.config.npm.levels,
   transports: [new Logsene({
     token: process.env.LOGS_TOKEN,
     level: 'debug',
@@ -46,6 +47,7 @@ const {createLogger, format} = require('winston')
 var myServerIp = '10.0.0.12'
 
 var logger = createLogger({
+  levels: winston.config.npm.levels,
   transports: [new Logsene({
     // set log level, defaut is 'info'
     level: 'debug',
