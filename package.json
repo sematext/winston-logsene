@@ -31,7 +31,7 @@
   "homepage": "https://www.sematext.com",
   "dependencies": {
     "flat": "^2.0.0",
-    "logsene-js": "^1.1.60",
+    "logsene-js": "^1.1.64",
     "winston": "^3.2.1",
     "winston-transport": "^4.3.0"
   },
