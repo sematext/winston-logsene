@@ -16,7 +16,7 @@ var logger = createLogger({
   // format: winston.format.json(),
   transports: [new Logsene({
     // set log level, defaut is 'info'
-    level: 'debug',
+    level: 'silly',
     // optional set a format function
     format: format.splat(),
     token: process.env.LOGS_TOKEN,
@@ -37,10 +37,10 @@ var http = require('http')
 const PORT = 7080
 
 function handleRequest (request, response) {
-  logger.info('request for: ' + request.url, request.headers)
+  logger.silly('request for: ' + request.url, request.headers)
   response.end('It Works!! Path Hit: ' + request.url)
   // log memory usage for simple monitoring
-  logger.info('memory usage' + process.memoryUsage().rss, process.memoryUsage())
+  logger.silly('memory usage' + process.memoryUsage().rss, process.memoryUsage())
 }
 var server = http.createServer(handleRequest)
 // graceful shutdown
