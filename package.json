@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
-    "bundle": "browserify -r ./lib/index.js:winston-logsene > bundle.js"
+    "bundle": "browserify -r ./lib/index.js:winston-logsene > bundle.js",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,24 @@
     "winston-transport": "^4.3.0"
   },
   "devDependencies": {
-    "mocha": "^7.1.2"
+    "auto-changelog": "^1.16.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.2.2",
+    "mocha": "^7.1.2",
+    "release-it": "^12.6.0",
+    "standard": "^14.3.1"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "tokenRef": "RELEASE_IT_GITHUB_TOKEN",
+      "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u --template ./changelog.hbs"
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p"
+    }
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
