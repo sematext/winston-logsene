@@ -6,7 +6,7 @@
 var Logsene = require('../lib/index.js')
 
 var winston = require('winston')
-const {createLogger, format} = require('winston')
+const { createLogger, format } = require('winston')
 
 // example for custom rewriter, e.g. add myServerIp field to all logs
 var myServerIp = '10.0.0.12'
@@ -56,6 +56,10 @@ process.on('SIGINT', function () {
 })
 
 server.listen(PORT, function () {
-    // Callback triggered when server is successfully listening. Hurray!
+  // Callback triggered when server is successfully listening. Hurray!
   console.log('Server listening on: http://localhost:%s', PORT)
+
+  setInterval(() => {
+    logger.info('Tick Tock')
+  }, 3000)
 })
