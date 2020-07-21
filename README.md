@@ -28,6 +28,7 @@ var logger = winston.createLogger({
 - __type__ - Type of your logs - please note you can define [Elasticsearch mapping templates in Sematext Cloud](https://sematext.com/blog/custom-elasticsearch-index-templates-in-logsene/)
 - __url__ - Sematext Cloud receiver URL (or URL for Sematext Enterprise / On Premises), defaults to Sematext Cloud (US) receiver `https://logsene-receiver.sematext.com/_bulk`.  To ship logs to Sematext Cloud (EU) in Europe use `https://logsene-receiver.eu.sematext.com/_bulk`
 - __handleExceptions__ - boolean 'true' logs 'uncaught exceptions'
+- __handleErrors__ - boolean 'true' logs 'unhandled errors'
 - __exitOnError__ - if set to 'false' process will not exit after logging the 'uncaught exceptions'
 - __source__ - name of the logging source, by default name of the main node.js module
 - __setSource__ - "true" adds "source" to the log event (modifies the object!), default false
