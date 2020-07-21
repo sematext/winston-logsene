@@ -10,10 +10,10 @@ Create your free account and access token [here](https://apps.sematext.com/ui/re
 
 ```js
 
-var winston = require('winston')
+const { createLogger, config } = require('winston')
 var Logsene = require('winston-logsene')
-var logger = winston.createLogger({
-  levels: winston.config.npm.levels,
+var logger = createLogger({
+  levels: config.npm.levels,
   transports: [new Logsene({
     token: process.env.LOGS_TOKEN,
     level: 'debug',
@@ -40,15 +40,14 @@ var logger = winston.createLogger({
 ### Examples
 
 ```js
-// var winston = require('winston')
 var Logsene = require('winston-logsene')
-const {createLogger, format} = require('winston')
+const { createLogger, format, config } = require('winston')
 
 // example for custom rewriter, e.g. add myServerIp field to all logs
 var myServerIp = '10.0.0.12'
 
 var logger = createLogger({
-  levels: winston.config.npm.levels,
+  levels: config.npm.levels,
   transports: [new Logsene({
     // set log level, defaut is 'info'
     level: 'debug',
