@@ -12,7 +12,7 @@ Create your free account and access token [here](https://apps.sematext.com/ui/re
 const Logsene = require('winston-logsene')
 const { createLogger, format, config } = require('winston')
 
-var logger = createLogger({
+const logger = createLogger({
   levels: config.npm.levels,
   transports: [new Logsene({
     token: process.env.LOGS_TOKEN,
