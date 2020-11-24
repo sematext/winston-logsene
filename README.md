@@ -9,7 +9,7 @@ Create your free account and access token [here](https://apps.sematext.com/ui/re
 ## Usage
 
 ```js
-const Logsene = require('../sematext/winston-logsene/lib')
+const Logsene = require('winston-logsene')
 const { createLogger, format, config } = require('winston')
 
 var logger = createLogger({
