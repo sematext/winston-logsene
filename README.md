@@ -88,7 +88,7 @@ logger.info('hello', {id: 1})
 logger.info('hello', {id: 'ID-1'})
 // using a different type, OK no type conflict for the field 'id' in Elasticsearch//Sematext Cloud
 // because we use a different type in the Elasticsearch//Sematext Cloud index
-logger.info('hello', {type: 'my_type_with_string_ids',{id: 'ID-1'})
+logger.info('hello', {type: 'my_type_with_string_ids',{id: 'ID-1'}})
 ```
 
 ## Security
