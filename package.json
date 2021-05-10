@@ -32,7 +32,6 @@
   "homepage": "https://www.sematext.com",
   "dependencies": {
     "logsene-js": "^1.1.73",
-    "safe-flat": "^2.0.1",
     "winston": "^3.2.1",
     "winston-compat": "^0.1.5",
     "winston-transport": "^4.3.0"
@@ -42,7 +41,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.2.2",
     "mocha": "^7.1.2",
-    "release-it": "^13.6.5",
+    "release-it": "^14.6.2",
     "standard": "^14.3.1"
   },
   "release-it": {
