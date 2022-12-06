@@ -40,7 +40,7 @@
     "auto-changelog": "^1.16.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.2.2",
-    "mocha": "^7.1.2",
+    "mocha": "^10.1.0",
     "release-it": "^14.6.2",
     "standard": "^14.3.1"
   },
