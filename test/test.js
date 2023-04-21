@@ -1,10 +1,11 @@
+const LOGSENE_TOKEN = 'irrelevant-token'
 describe('Logsene log ', function () {
   this.timeout(50000)
   it('log N entries and get N events', function (done) {
     try {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
-      var transport = new Logsene({token: process.env.LOGSENE_TOKEN})
+      var transport = new Logsene({ token: LOGSENE_TOKEN })
       var logger = winston.createLogger({
         format: winston.format.combine(winston.format.splat(), winston.format.simple()),
         transports:[transport]
@@ -13,7 +14,7 @@ describe('Logsene log ', function () {
         logger.info('Test %d for %s', i, 'logsene', {x: i, y: {arr: [1, 2, 3, 4]}})
       }
       transport.on('logged', function (data) {
-        if (data.count == 100) {
+        if (data.count === 100) {
           done()
         }
       })
@@ -34,7 +35,7 @@ describe('Logsene log source', function () {
     try {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
-      var transport = new Logsene({token: process.env.LOGSENE_TOKEN, setSource: true, source: 'mocha-test'})
+      var transport = new Logsene({ token: LOGSENE_TOKEN , setSource: true, source: 'mocha-test' })
       var logger = winston.createLogger({
         transports:[transport]
       })
@@ -62,7 +63,7 @@ describe('Logsene rewrite hook', function () {
       var winston = require('winston')
       var Logsene = require('../lib/index.js')
       var transport = new Logsene({
-        token: process.env.LOGSENE_TOKEN,
+        token: LOGSENE_TOKEN,
         setSource: false,
         flushOnExit: true,
         rewriter: function (level, msg, meta) {

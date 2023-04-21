@@ -31,18 +31,16 @@
   },
   "homepage": "https://www.sematext.com",
   "dependencies": {
-    "logsene-js": "^1.1.73",
+    "logsene-js": "^1.1.76",
     "winston": "^3.2.1",
     "winston-compat": "^0.1.5",
     "winston-transport": "^4.3.0"
   },
   "devDependencies": {
-    "auto-changelog": "^1.16.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.2.2",
     "mocha": "^10.1.0",
-    "release-it": "^15.5.1",
-    "standard": "^14.3.1"
+    "release-it": "^15.5.1"
   },
   "release-it": {
     "github": {
